@@ -29,36 +29,43 @@ class Quiz {
   }
 
   play(){
-    //write code here to hide question elements
     question.hide();
-
-   // }
-
-    //write code to change the background color here
-
-    //write code to show a heading for showing the result of Quiz
-    text("RESULT",425,400)
-
-    //call getContestantInfo( ) here
+    textSize(30);
     Contestant.getPlayerInfo();
-
 
     //write condition to check if contestantInfor is not undefined
     if(allContestants!==undefined){
-      var displayPosition = 130;
+      var displayPosition = 300;
+      textSize(20)
+      text("NOTE:* Contestants who answered correct are highlighted in green colour",displayWidth/9,250)
       
       for(var plr in allContestants){
-          if(plr==="player"+contestant.index){
-              fill("red")
+        var correctAns ="2";
+        var color
+          if(correctAns===allContestants[plr].answer){
+              fill("green")
+            //  color = "green"
           }else{
-              fill("black")
+            fill("red")
+            //  color = "red"
           }
 
-    //write code to add a note here
+          displayPosition += 30;
+          stroke("black")
+          textSize(20)
 
-    //write code to highlight contest who answered correctl 
-  }
+          text(allContestants[plr].name + ":" + allContestants[plr].answer,displayWidth/4,displayPosition)
+          fill("BLACK")
+          text("results",displayWidth/4,200)
+          console.log(allContestants)
+        }
 
+        }
+
+
+    if (keyDown(UP_ARROW) && player.index !== null){
+      player.distance += 50;
+      player.update();
     }
   }
 }

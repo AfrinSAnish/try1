@@ -18,7 +18,7 @@ class Question {
     this.input1.hide();
     this.button.hide();
     this.input2.hide();
-    thia.greeting.hide();
+    this.greeting.hide();
   }
 
   display(){
@@ -54,8 +54,8 @@ class Question {
       contestant.update();
       contestant.updateCount(contestantCount);
 
-      this.greeting.html("THANK YOU FOR PLAYING THIS " + contestant.name)
-      this.greeting.position(Width/2,Height/2)
+      this.greeting.html("Thank you " + contestant.name)
+      this.greeting.position(displayWidth/2-400,displayHeight/2-100)
     });
   }
 }

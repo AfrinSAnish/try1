@@ -22,7 +22,7 @@ function setup(){
 function draw(){
   background("pink");
 
-  if(contestantCount === 2&&mousePressedOver(button)){
+  if(contestantCount === 2){
     quiz.update(1);
   }
   
